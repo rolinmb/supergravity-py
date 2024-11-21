@@ -5,8 +5,8 @@ from matplotlib.animation import FuncAnimation
 
 # Function to simulate the curved spacetime effect (using sine-based curvature)
 def curved_spacetime(X, Theta, time):
-    # Curvature in the z-direction, depends on X and time
-    curvature = np.sin(X / 2) * np.cos(time / 10)  # Time-dependent curvature effect
+    # Curvature in both the X and Theta directions, depends on time as well
+    curvature = np.sin(X / 2) * np.cos(Theta * np.pi) * np.cos(time / 10)
     return curvature
 
 def update(frame, X, Theta, ax1, ax2, Re_Phi, Im_Phi, Re_surface, Im_surface):
